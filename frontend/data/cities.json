@@ -1,0 +1,30 @@
+{
+  "cities": [
+    {
+      "id": "85f2",
+      "cityName": "Tobed",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-06-28T07:51:14.741Z",
+      "notes": "",
+      "position": {
+        "lat": "41.37808490322534",
+        "lng": "-1.3631429889154645"
+      },
+      "email": "Moral de Hornuez"
+    },
+    {
+      "id": "7d06",
+      "cityName": "Limbrassac",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2025-06-28T07:51:22.483Z",
+      "notes": "",
+      "position": {
+        "lat": "43.02151334093503",
+        "lng": "1.8636166375540733"
+      },
+      "email": "Tobed"
+    }
+  ]
+}

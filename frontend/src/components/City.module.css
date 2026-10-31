@@ -1,0 +1,140 @@
+.city {
+  padding: 2rem 3rem;
+  max-height: 70%;
+  border-radius: 7px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+   background: rgba(30, 41, 59, 0.6);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.city:hover{
+    transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.city h6 {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--color-light--1);
+}
+
+.city h3 {
+  font-size: 1.9rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.city h3 span {
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.city p {
+  font-size: 1.6rem;
+}
+
+.city a:link,
+.city a:visited {
+  font-size: 1.6rem;
+  color: var(--color-brand--1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .city {
+    padding: 1.5rem 2rem;
+    max-height: unset; /* Remove max-height restriction on smaller screens */
+    gap: 1.5rem;
+  }
+
+  .city h6 {
+    font-size: 1rem;
+  }
+
+  .city h3 {
+    font-size: 1.6rem;
+  }
+
+  .city h3 span {
+    font-size: 2.8rem;
+  }
+
+  .city p {
+    font-size: 1.4rem;
+  }
+
+  .city a:link,
+  .city a:visited {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .city {
+    padding: 1rem 1.5rem;
+    flex-direction: column; /* Ensure vertical stacking */
+    gap: 1rem;
+  }
+
+  .city h6 {
+    font-size: 0.9rem;
+  }
+
+  .city h3 {
+    font-size: 1.4rem;
+  }
+
+  .city h3 span {
+    font-size: 2.4rem;
+  }
+
+  .city p {
+    font-size: 1.2rem;
+  }
+
+  .city a:link,
+  .city a:visited {
+    font-size: 1.2rem;
+  }
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.generate{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+.generate:hover{
+  color: #f1f5f9;
+}

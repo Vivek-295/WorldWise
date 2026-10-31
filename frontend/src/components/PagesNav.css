@@ -1,0 +1,231 @@
+/* -------------------- NAVBAR -------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* -------------------- LOGO -------------------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: bold;
+  color: var(--text);
+}
+
+.logo-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  color: var(--accent);
+}
+
+/* -------------------- NAV LINKS -------------------- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.7rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 1.4rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* -------------------- CTA BUTTON -------------------- */
+.cta-button {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* -------------------- USER INFO -------------------- */
+.profilecontainer {
+  cursor: pointer;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: linear-gradient(to right, #60a5fa, #a855f7);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.user img {
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* -------------------- PROFILE DROPDOWN -------------------- */
+.profilebox {
+  position: absolute;
+  top: 5.7rem;
+  width: 280px !important;
+  background: #0f172a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  color: #f1f5f9;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.profilecontainer:hover .profilebox {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.profileicon img {
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+  border: 2px solid #22c55e;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profileicon img:hover {
+  transform: scale(1.05);
+}
+
+.profilebox h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.profilebox p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #cbd5e1;
+}
+
+.profilebox button {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profilebox button:hover {
+  background-color: #2563eb;
+}
+
+/* -------------------- RESPONSIVENESS -------------------- */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .profilebox {
+    right: 1rem;
+    top: 5.5rem;
+    width: 90vw;
+    max-width: 300px;
+  }
+
+  .user {
+    font-size: 1rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .profilebox {
+    top: 5rem;
+    right: 0.5rem;
+    width: 90vw;
+  }
+
+  .profileicon img {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+
+  .user {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  .profilebox button {
+    font-size: 0.85rem;
+  }
+}
