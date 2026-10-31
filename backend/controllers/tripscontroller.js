@@ -105,7 +105,7 @@ async function generateAndStoreTrip(cityName, strength, tripType, startDate, end
      const numDays = Math.ceil(
       (new Date(endDate).getTime() - new Date(startDate).getTime()) / (1000 * 60 * 60 * 24)
     );
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const prompt = buildPrompt({ cityName, strength, tripType, numDays,budget});
 
     const result = await model.generateContent(prompt);
