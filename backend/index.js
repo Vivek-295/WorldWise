@@ -1,59 +1,59 @@
 //app create
 require("dotenv").config();
-const cors=require("cors")
+const cors=require("cors");
 const express=require("express");
 const fileupload=require("express-fileupload");
 const app=express();
 
 // PORT find kro 
+const PORT=process.env.PORT || 4000;
 
-
-const PORT=process.env.PORT || 3000;
-
-//midlleware add krna hai  
-
-
+// middleware add krna hai  
 app.use(express.json());
 app.use(cors({
-    origin: ["*","http://localhost:5173",process.env.FRONTEND_URL || "http://localhost:5173"], // Allow requests from your frontend
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-    credentials: true // Allow cookies to be sent with requests (if needed)
+    origin: ["*", "http://localhost:5173", "https://world-wise-guide.netlify.app", process.env.FRONTEND_URL || "*"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
 }));
 
 app.use(
     fileupload({
-        useTempFiles: true, // Enables temporary file storage
-        tempFileDir: "/tmp/", // Temporary directory for uploaded files
+        useTempFiles: true,
+        tempFileDir: "/tmp/",
     })
 );
 
 // db se connect
-
-const db =require('./config/database');
-db.connect()
+const db = require('./config/database');
+db.connect();
 
 // cloud se connect 
-
 const cloudinary = require("./config/cloudinary");
 cloudinary.cloudinaryConnect();
+
 // Home Route
-app.get("/",
-    (req,res)=>{
-        res.json("WorldWise Backend is live")
-    }
-)
+app.get("/", (req,res)=>{
+    res.json("WorldWise Backend is live");
+});
+
 // API Route Mounting
 const Upload = require("./routes/FileUpload");
 const authRoutes = require("./routes/userRoute");
 const TripRoutes = require("./routes/TripPlanner");
-const CityRoutes=require("./routes/cityroute");
+const CityRoutes = require("./routes/cityroute");
 const tripfirebaseRoutes = require("./routes/trips");
+
 app.use('/api/auth', authRoutes);
 app.use('/api/auth/upload', Upload);
 app.use('/api/auth/trips', TripRoutes);
-app.use('/api/auth/city',CityRoutes);
-app.use('/api/auth', tripfirebaseRoutes);;
-//activating server
-app.listen(PORT,()=>{
-    console.log(`App is running at ${PORT}`)
-});
+app.use('/api/auth/city', CityRoutes);
+app.use('/api/auth', tripfirebaseRoutes);
+
+// activating server for standalone run
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+    app.listen(PORT,()=>{
+        console.log(`App is running at ${PORT}`);
+    });
+}
+
+module.exports = app;
