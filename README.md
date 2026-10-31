@@ -10,7 +10,12 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb)](https://www.mongodb.com/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 [![Gemini AI](https://img.shields.io/badge/Google-Gemini_AI-4285F4?logo=google)](https://ai.google.dev/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Netlify-00C7B7?logo=netlify&logoColor=white)](https://world-wise-guide.netlify.app)
+[![API Status](https://img.shields.io/badge/API-Vercel-black?logo=vercel&logoColor=white)](https://worldwise-api-ten.vercel.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+> 🚀 **Live Application:** [https://world-wise-guide.netlify.app](https://world-wise-guide.netlify.app)  
+> ⚡ **Production API:** [https://worldwise-api-ten.vercel.app](https://worldwise-api-ten.vercel.app)
 
 ---
 
