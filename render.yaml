@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: worldwise-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URL
+        value: mongodb+srv://avanishupadhyay633:2jqrvQmQwiOgLslp@cluster0.c80t1.mongodb.net/Worldwise?retryWrites=true&w=majority&appName=Cluster0
+      - key: JWT_SECRET
+        value: worldwise_jwt_secret_key_2026
+      - key: CLOUD_NAME
+        value: dfstpdwih
+      - key: API_KEY
+        value: 364194326781857
+      - key: API_SECRET
+        value: aSqjWfNPVpkq4TFpKwECHUlAA84
+      - key: GEMINI_API_KEY
+        value: AIzaSyCeuJWAwNPnhh0mflQkltpjiKwLsivN-dU
+      - key: GOOGLE_SEARCH_API_KEY
+        value: AIzaSyAALm-uGStRBFII7gU2QB-xJ_m7ERYmQF8
+      - key: GOOGLE_SEARCH_CX
+        value: 613aebe8e8d6f4898
