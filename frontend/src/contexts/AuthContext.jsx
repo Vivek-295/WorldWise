@@ -60,7 +60,7 @@ function reducer(state, action) {
 }
 
 export default function AuthProvider({ children }) {
-  const API_BASE_URL = (import.meta.env.VITE_BACKEND_URL || "http://localhost:4000") + "/";
+  const API_BASE_URL = (import.meta.env.VITE_BACKEND_URL || "https://worldwise-api-ten.vercel.app").replace(/\/$/, "") + "/";
   const [{ user, isAuthenticated, loading, error,savedTrips ,trips }, dispatch] = useReducer(reducer, initialState);
   
   const fetchUserProfile = async () => {

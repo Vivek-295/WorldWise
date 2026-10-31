@@ -8,3 +8,6 @@ yarn-debug.log*
 yarn-error.log*
 firebase/serviceAccountkey.json
 encoded.txt
+
+.vercel
+.env*

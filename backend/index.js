@@ -1,3 +1,9 @@
+// Polyfill SlowBuffer for Node 22+ compatibility with buffer-equal-constant-time
+const bufferMod = require('buffer');
+if (!bufferMod.SlowBuffer) {
+    bufferMod.SlowBuffer = bufferMod.Buffer;
+}
+
 //app create
 require("dotenv").config();
 const cors=require("cors");
@@ -25,11 +31,22 @@ app.use(
 
 // db se connect
 const db = require('./config/database');
-db.connect();
+db.connect().catch(err => console.error("Initial DB connect error:", err.message));
 
 // cloud se connect 
 const cloudinary = require("./config/cloudinary");
 cloudinary.cloudinaryConnect();
+
+// Ensure DB is connected for serverless requests
+app.use(async (req, res, next) => {
+    try {
+        await db.connect();
+        next();
+    } catch (err) {
+        console.error("Database connection middleware error:", err.message);
+        res.status(500).json({ message: "Database connection failed", error: err.message });
+    }
+});
 
 // Home Route
 app.get("/", (req,res)=>{
